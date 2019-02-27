@@ -13,7 +13,7 @@
 import TodoList from '@/components/todos/TodoList'
 
 export default {
-    name: 'todoPage',
+  name: 'todoPage',
   components: {
     TodoList
   }
