@@ -1,6 +1,6 @@
 <template>
     <div>
-        <todoList></todoList>
+        <todosList></todosList>
     </div>
 </template>
 
@@ -10,12 +10,11 @@
 
 <script>
 // @ is an alias to /src
-import TodoList from '@/components/todos/TodoList'
+import TodosList from '@/components/todos/TodosList'
 
 export default {
-  name: 'todoPage',
   components: {
-    TodoList
+    TodosList
   }
 }
 </script>
