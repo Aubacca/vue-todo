@@ -6,7 +6,7 @@ import axios from 'axios'
 
 var http = null // not possible to create a private property in JavaScript, so we move it outside of the class, so that it's only accessible within this module
 
-class TodoService {
+class UsersService {
   constructor ({ url }) {
     http = axios.create({
       baseURL: url,
@@ -37,7 +37,7 @@ class TodoService {
   }
 
   findAll () {
-    return http.get('todos')
+    return http.get('users')
   }
 
   // create ({ resource, data, query }) {
@@ -57,12 +57,11 @@ class TodoService {
   // }
 }
 
-// export default new TodoService({
+// export default new UsersService({
 //   url: env('API_URL')  // We assume 'https://api.example.com/v1' is set as the env variable
 // })
 
-// https://jsonplaceholder.typicode.com/photos
 
-export default new TodoService({
+export default new UsersService({
   url: 'https://jsonplaceholder.typicode.com/'  // We assume 'https://api.example.com/v1' is set as the env variable
 })

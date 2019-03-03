@@ -1,10 +1,12 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-import Home from './views/Home.vue'
-import TodoPage from './views/TodoPage.vue'
+import Home from './views/Home';
+import TodosPage from './views/TodosPage';
+import PhotosPage from '@/views/PhotosPage';
+import UsersPage from '@/views/UsersPage'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -13,10 +15,20 @@ export default new Router({
       name: 'home',
       component: Home
     },
-     {
-      path: '/todo',
-      name: 'todo',
-      component: TodoPage
+    {
+      path: '/todos',
+      name: 'todos',
+      component: TodosPage
+    },
+    {
+      path: '/photos',
+      name: 'photos',
+      component: PhotosPage
+    },
+    {
+      path: '/users',
+      name: 'users',
+      component: UsersPage
     },
     {
       path: '/about',
@@ -25,6 +37,10 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/AboutPage.vue')
+    },
+    {
+      path: '**',
+      component: Home
     }
   ]
-})
+});
