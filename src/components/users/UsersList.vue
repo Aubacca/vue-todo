@@ -12,7 +12,11 @@ h1 {
 </style>
 
 <script>
+import RestResource from '@/services/RestResource.ts';
+import restResource2 from '@/services/RestResource2'
+
 export default {
+
   name: "usersList",
   data() {
     return {
@@ -20,6 +24,12 @@ export default {
     };
   },
   created() {},
-  mounted() {}
+  mounted() {
+    const restResourceService = new RestResource();
+    restResourceService.sendRequest();
+
+    restResource2.sendRequest();
+
+  }
 };
 </script>
